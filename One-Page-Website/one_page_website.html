@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="./one_page_website.css">
+		<script src="./JS/one_page_website.js" defer></script>
 		<title>Tropical Fish</title>
 		<nav>
 			<a href="#home">HOME</a> |
@@ -30,29 +31,110 @@
 			<h2>GALLERY</h2>
 			<p>Check out these tropical fish!</p>
 			
-			<!--PHOTO 1-->
-				<div>
-					<img src="http://meowlogy.com/wp-content/uploads/2019/05/Colourful-Fish-12.jpg" width="400" alt="Discus Image">
+				<!--Images used in the Lightbox-->
+				<div class="row">
+				<!--PHOTO 1-->
+					<div class="photo-container">
+					<div class="column">
+						<img src="http://meowlogy.com/wp-content/uploads/2019/05/Colourful-Fish-12.jpg" 
+						 height="150px" onclick="openModal(); currentSlide(1)" class="hover-shadow" alt="Discus Image">
+					</div>
+					</div>
+				<!--END PHOTO-->
+				
+				<!--PHOTO 2-->
+					<div class="photo-container">
+					<div class="column">
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fusercontent1.hubstatic.com%2F14632498_f496.jpg&f=1&nofb=1" 
+						height="150px" onclick="openModal(); currentSlide(2)" class="hover-shadow" alt="Angel Fish Image">
+					</div>
+					</div>
+				<!--END PHOTO-->
+				
+				<!--PHOTO 3-->
+					<div class="photo-container">
+					<div class="column">
+						<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffishkeepingadvice.com%2Fwp-content%2Fuploads%2Fbeta-fish.jpg&f=1&nofb=1" 
+						height="150px" onclick="openModal(); currentSlide(3)" class="hover-shadow" alt="Betta Image">
+					</div>
+					</div>
+				<!--END PHOTO-->
+				
+				<!--PHOTO 4-->
+					<div class="photo-container">
+					<div class="column">
+						<img src="https://i.pinimg.com/originals/83/69/5c/83695c8954b85df0492e455be6644810.jpg" 
+						height="150px" onclick="openModal(); currentSlide(4)" class="hover-shadow" alt="Cichlid Image">
+					</div>
+					</div>
+				<!--END PHOTO-->
 				</div>
-			<!--END PHOTO-->
-			
-			<!--PHOTO 2-->
-				<div>
-					<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fusercontent1.hubstatic.com%2F14632498_f496.jpg&f=1&nofb=1" width="400" alt="Angel Fish Image">
+
+				<!--The Modal/lightbox-->
+				<div id="myModal" class="modal">
+					<span class="close cursor" onclick="closeModal()">&times;</span>
+					<div class="modal-content">
+
+						<div class="mySlides">
+							<div class="numbertext">1 / 4</div>
+							<img src="http://meowlogy.com/wp-content/uploads/2019/05/Colourful-Fish-12.jpg"
+							style="width: 100%;">
+						</div>
+
+						<div class="mySlides">
+							<div class="numbertext">2 / 4</div>
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fusercontent1.hubstatic.com%2F14632498_f496.jpg&f=1&nofb=1" 
+							style="width: 100%;">
+						</div>
+
+						<div class="mySlides">
+							<div class="numbertext">3 / 4</div>
+							<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffishkeepingadvice.com%2Fwp-content%2Fuploads%2Fbeta-fish.jpg&f=1&nofb=1" 
+							style="width: 100%;">
+						</div>
+
+						<div class="mySlides">
+							<div class="numbertext">4 / 4</div>
+							<img src="https://i.pinimg.com/originals/83/69/5c/83695c8954b85df0492e455be6644810.jpg"
+							style="width: 100%;">
+						</div>
+
+						<!--Next/Prev controls-->
+						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+						<!--Caption Text-->
+						<div class="caption-container">
+							<p id="caption"></p>
+						</div>
+
+						<!--Thumbnail Image Controls-->
+					<!--PHOTO 1-->
+						<div class="column">
+							<img src="http://meowlogy.com/wp-content/uploads/2019/05/Colourful-Fish-12.jpg" 
+							class="demo" onclick="currentSlide(1)" alt="Discus Image">
+						</div>
+					
+					<!--PHOTO 2-->
+						<div class="column">
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fusercontent1.hubstatic.com%2F14632498_f496.jpg&f=1&nofb=1" 
+							class="demo" onclick="currentSlide(2)" alt="Angel Fish Image">
+						</div>
+					
+					<!--PHOTO 3-->
+						<div class="column">
+							<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffishkeepingadvice.com%2Fwp-content%2Fuploads%2Fbeta-fish.jpg&f=1&nofb=1" 
+							class="demo" onclick="currentSlide(3)" alt="Betta Image">
+						</div>
+					
+					<!--PHOTO 4-->
+						<div class="column">
+							<img src="https://i.pinimg.com/originals/83/69/5c/83695c8954b85df0492e455be6644810.jpg" 
+							class="demo" onclick="currentSlide(4)" alt="Cichlid Image">
+						</div>
+
+					</div>
 				</div>
-			<!--END PHOTO-->
-			
-			<!--PHOTO 3-->
-				<div>
-					<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffishkeepingadvice.com%2Fwp-content%2Fuploads%2Fbeta-fish.jpg&f=1&nofb=1" width="400" alt="Betta Image">
-				</div>
-			<!--END PHOTO-->
-			
-			<!--PHOTO 4-->
-				<div>
-					<img src="https://i.pinimg.com/originals/83/69/5c/83695c8954b85df0492e455be6644810.jpg" width="400" alt="Cichlid Image">
-				</div>
-			<!--END PHOTO-->
 			
 			</div>
 		<!--END GALLERY-->
